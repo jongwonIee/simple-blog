@@ -31,9 +31,9 @@ module Authors
     # PATCH/PUT /posts/1
     def update
       if @post.update(post_params)
-        redirect_to @post, notice: 'Post was successfully updated.'
+        redirect_to edit_post_path(@post)
       else
-        render :edit
+        broadcast_errors @post, post_params
       end
     end
 
