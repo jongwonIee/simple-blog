@@ -6,6 +6,21 @@
         <h4 class="card-title">Editing Post</h4>
         <%= render 'form', post: @post %>
       </div>
+      <div class="card-footer">
+        <% if @post.published? %>
+          <a href="#" class="btn btn-dark btn-block"
+             data-reflex="click->PublisherReflex#unpublish"
+             data-post-id="<%= @post.id %>">
+            Unpublish
+          </a>
+        <% else %>
+          <a href="#" class="btn btn-dark btn-block"
+             data-reflex="click->PublisherReflex#publish"
+             data-post-id="<%= @post.id %>">
+             Publish
+          </a>
+        <% end %>
+      </div>
     </div>
   </div>
   <div class="col-md-9">
