@@ -22,7 +22,7 @@ module Authors
       @post = current_author.posts.build(post_params)
 
       if @post.save
-        redirect_to @posts, notice: 'Post was successfully created.'
+        redirect_to edit_post_path(@post)
       else
         render :new
       end
@@ -51,7 +51,7 @@ module Authors
 
       # Only allow a list of trusted parameters through.
       def post_params
-        params.require(:post).permit(:title, :description, :hashtag)
+        params.require(:post).permit(:title, :description, :hashtag, :header_image)
       end
   end
 end
