@@ -12,11 +12,13 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+import Sortable from 'sortablejs'
 import '../stylesheets/application'
 
 require("trix")
 require("@rails/actiontext")
 
+// d-none
 document.addEventListener('turbolinks:load', () => {
     document.addEventListener('click', () => {
         let element = event.target.closest('.paragraph-content')
@@ -36,5 +38,9 @@ document.addEventListener('turbolinks:load', () => {
         element.classList.add('d-none')
         element.previousElementSibling.classList.remove('d-none')
     })
+
+    // sortable js
+    let element = document.getElementById('elements')
+    Sortable.create(element, {animation: 150 })
 })
 import "controllers"
