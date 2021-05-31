@@ -12,11 +12,17 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-import Sortable from 'sortablejs'
-import '../stylesheets/application'
 
-require("trix")
+
+const Trix = require("trix")
 require("@rails/actiontext")
+
+Trix.config.blockAttributes.heading1.tagName = "h3";
+
+import Sortable from 'sortablejs'
+import "controllers"
+
+import '../stylesheets/application'
 
 // d-none
 document.addEventListener('turbolinks:load', () => {
@@ -43,4 +49,3 @@ document.addEventListener('turbolinks:load', () => {
     let element = document.getElementById('elements')
     Sortable.create(element, {animation: 150 })
 })
-import "controllers"
