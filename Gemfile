@@ -68,3 +68,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "stimulus_reflex", "~> 3.4"
 
 gem "optimism", "~> 0.4.2"
+
+gem 'friendly_id', '~> 5.4.0'
+
+gem "impressionist"
+
+gem 'rexml'
