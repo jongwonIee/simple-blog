@@ -2,10 +2,13 @@ class Post < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history, :finders]
 
+  is_impressionable
+
   belongs_to :author
   has_many :elements
 
-  has_one_attached :header_image
+  has_one_attached :header_image, dependent: :destroy
+  validates :header_image, content_type: [:png, :jpg, :jpeg]
 
   validates_presence_of :title, :description
   validates_length_of :description, within: 50..250
