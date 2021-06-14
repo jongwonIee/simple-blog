@@ -138,8 +138,6 @@ GEM
     nio4r (2.5.7)
     nokogiri (1.11.7-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.11.7-x86_64-linux)
-      racc (~> 1.4)
     optimism (0.4.2)
       cable_ready (>= 4.4.6)
       rack (~> 2.0)
@@ -268,7 +266,6 @@ GEM
 
 PLATFORMS
   x86_64-darwin-18
-  x86_64-linux
 
 DEPENDENCIES
   active_storage_validations
