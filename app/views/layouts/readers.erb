@@ -13,8 +13,18 @@
 </head>
   <body class="bg-light readers <%= controller_name %> <%= action_name %>">
     <div class="container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cv.pdf">Resume</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
       <%= yield %>
     </div>
   </body>
