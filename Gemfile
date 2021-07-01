@@ -73,8 +73,6 @@ gem "optimism", "~> 0.4.2"
 
 gem 'friendly_id', '~> 5.4.0'
 
-gem 'impressionist',
-    git: 'git@github.com:charlotte-ruby/impressionist.git',
-    ref: '46a582ff8cd3496da64f174b30b91f9d97e86643'
+gem 'impressionist'
 
 gem 'rexml'
