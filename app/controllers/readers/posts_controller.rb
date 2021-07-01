@@ -2,9 +2,7 @@ module Readers
   class PostsController < ReadersController
     before_action :set_post
     def show
-      if @post
-        impressionist(@post)
-      end
+      # impressionist(@post)
       @views = @post.impressionist_count
       @uniq_views = @post.impressionist_count(:filter=>:ip_address)
     end
