@@ -24,7 +24,7 @@
             <li class="nav-item active">
               <a class="nav-link" href="/cv.pdf">CV</a>
             </li>
-            <% if current_author.id == 1 %>
+            <% if current_author && current_author.id == 1 %>
               <li class="nav-item active">
                 <a class="nav-link" href="/posts">Posts</a>
               </li>
