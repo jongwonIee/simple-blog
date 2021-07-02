@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :set_action_cable_identifier
+  before_action :authenticate_author!
 
   private
 
