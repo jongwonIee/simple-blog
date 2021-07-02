@@ -12,7 +12,7 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-
+require("jquery")
 
 const Trix = require("trix")
 require("@rails/actiontext")
