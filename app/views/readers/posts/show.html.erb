@@ -5,7 +5,7 @@
       <div class="header-image" style="background-image: url(<%= url_for(@post.header_image) %>)"></div>
       <div class="card-body">
         <div class="pl-5 pr-5 pt-4 pb-4">
-          <h1 class="card-title"><%= @post.title %></h1>
+          <h2 class="card-title"><%= @post.title %></h2>
           <div class="mb-5">by. Jongwon Lee | <%= @views %> Views (<%= @uniq_views %> Uniq Views) | <%= time_ago_in_words(@post.published_at) %> ago</div>
           <% @post.elements.each do |element| %>
             <% if element.image? %>

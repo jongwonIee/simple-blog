@@ -12,7 +12,7 @@ class Post < ApplicationRecord
   validates :header_image, content_type: [:png, :jpg, :jpeg]
 
   validates_presence_of :title, :description
-  validates_length_of :description, within: 50..250
+  validates_length_of :description, within: 10..200
 
   scope :published, -> do
     where(published: true)
