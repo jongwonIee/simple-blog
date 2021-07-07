@@ -1,4 +1,4 @@
-<% @posts.each do |post| %>
+<% @posts.order(created_at: :desc).each do |post| %>
   <%= link_to edit_post_path(post), class: 'text-decoration-none' do %>
     <div class="card mb-3 post-card">
       <div class="card-body">
