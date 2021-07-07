@@ -1,11 +1,11 @@
+<% provide(:page_title, @post.title) %>
 <div class="row">
   <div class="col-md-4">
-    <%= link_to 'Back', posts_path, class: 'btn btn-dark mb-3' %>
-    <%= link_to 'Delete', post_path(@post),
-                method: :delete, class: 'btn btn-danger mb-3', data: {confirm: "Are you sure?"} %>
     <div class="card">
       <div class="card-header">
-        <h6 class="card-title mb-0">Editing Post</h6>
+          <%= link_to 'Back', posts_path, class: 'btn btn-dark mb-0' %>
+          <%= link_to 'Delete', post_path(@post),
+                      method: :delete, class: 'btn btn-danger mb-0', data: {confirm: "Are you sure?"} %>
       </div>
       <div class="card-body">
         <%= render 'form', post: @post %>
@@ -28,27 +28,27 @@
     </div>
   </div>
   <div class="col-md-8">
-    <div class="mb-3">
-      <%= form_with(model: [@post, @element], html: {class: 'float-left mr-1'}) do |form| %>
-        <%= form.hidden_field :element_type, value: 'paragraph' %>
-        <%= button_tag(type: 'submit', class: 'btn btn-secondary') do %>
-          <i class="fas fa-paragraph"></i>
-        <% end %>
-      <% end %>
-      <%= form_with(model: [@post, @element]) do |form| %>
-        <%= form.hidden_field :element_type, value: 'image' %>
-        <%= button_tag(type: 'submit', class: 'btn btn-secondary') do %>
-          <i class="fas fa-image"></i>
-        <% end %>
-      <% end %>
-    </div>
     <div class="card mb-5">
-      <div class="card-header text-right">
-        <% if @post.published? %>
-          <b> Published </b> <%= time_ago_in_words(@post.published_at) %> ago
-        <% else %>
-          Unpublished
+      <div class="card-header">
+        <%= form_with(model: [@post, @element], html: {class: 'float-left mr-1 d-inline'}) do |form| %>
+          <%= form.hidden_field :element_type, value: 'paragraph' %>
+          <%= button_tag(type: 'submit', class: 'btn btn-secondary') do %>
+            <i class="fas fa-paragraph"></i>
+          <% end %>
         <% end %>
+        <%= form_with(model: [@post, @element], html: {class: 'd-inline'}) do |form| %>
+          <%= form.hidden_field :element_type, value: 'image' %>
+          <%= button_tag(type: 'submit', class: 'btn btn-secondary') do %>
+            <i class="fas fa-image"></i>
+          <% end %>
+        <% end %>
+        <div class="d-inline float-right mt-2">
+          <% if @post.published? %>
+            <b> Published </b> <%= time_ago_in_words(@post.published_at) %> ago
+          <% else %>
+            Unpublished
+          <% end %>
+        </div>
       </div>
       <div class="card-body pt-5" data-controller="elements"> <!-- connect with elements_controller.js -->
         <% if @post.elements.none? { |element| element.persisted? } %>
