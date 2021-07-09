@@ -1,9 +1,6 @@
 .readers.home.index {
-  .title{
-    @include font-size(4rem);
-  }
   .post-card{
-    height: 450px;
+    height: 420px;
     margin-bottom: 50px;
     .header-image{
       height:200px;
@@ -15,6 +12,9 @@
 }
 
 .readers.posts.show {
+  .title{
+    @include font-size(4rem);
+  }
   .post-card{
     .header-image{
       height: 350px;
