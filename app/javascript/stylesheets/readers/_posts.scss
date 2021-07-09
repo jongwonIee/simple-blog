@@ -1,4 +1,7 @@
 .readers.home.index {
+  .title{
+    @include font-size(4rem);
+  }
   .post-card{
     height: 450px;
     margin-bottom: 50px;
