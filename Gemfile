@@ -75,3 +75,4 @@ gem 'friendly_id', '~> 5.4.0'
 gem 'impressionist'
 
 gem 'rexml'
+gem "ransack", "~> 2.4"
