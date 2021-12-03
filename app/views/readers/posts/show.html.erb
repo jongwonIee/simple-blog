@@ -7,7 +7,8 @@
         <div class="pl-3 pr-3 pt-4 pb-4">
           <h1 class="card-title mb-3"><%= @post.title %></h1>
           <div><b>by. Jongwon Lee</b> | <%= @views %> Views (<%= @uniq_views %> Uniq Views) | <%= time_ago_in_words(@post.published_at) %> ago</div>
-          <div class="mb-5"><%= @post.hashtag %></div>
+          <div><%= @post.hashtag %></div>
+          <div class="mb-5"><%= @post.description %></div>
           <% @post.elements.each do |element| %>
             <% if element.image? %>
               <div class="image-element mb-5">
