@@ -5,7 +5,7 @@ module Authors
     # GET /posts
     def index
       # @posts = current_author.posts
-      @q = current_author.posts.published.most_recently_published.ransack(params[:q])
+      @q = current_author.posts.most_recently_published.ransack(params[:q])
       @posts = @q.result
     end
 
