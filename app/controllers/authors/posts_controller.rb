@@ -4,24 +4,18 @@ module Authors
 
     # GET /posts
     def index
-      # @posts = current_author.posts
-      @q = current_author.posts.most_recently_published.ransack(params[:q])
-      @posts = @q.result
+      @posts = current_author.posts
     end
 
     # GET /posts/new
     def new
       @post = current_author.posts.build
-      @q = Post.published.most_recently_published.ransack(params[:q])
-      @posts = @q.result
-      # @posts = Post.published.most_recently_published
+      @posts = Post.published.most_recently_published
     end
 
     # GET /posts/1/edit
     def edit
-      @q = Post.published.most_recently_published.ransack(params[:q])
-      @posts = @q.result
-      # @posts = Post.published.most_recently_published
+      @posts = Post.published.most_recently_published
       @element = @post.elements.build
     end
 
