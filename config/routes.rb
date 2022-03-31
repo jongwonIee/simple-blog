@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   root to: "readers/home#index"
   get '/blog/:id' => 'readers/posts#show', as: :blog_post
   get '/blog' => "readers/home#index"
+  get '/resume' => redirect('/blog/resume')
   scope module: 'authors' do
     get 'stats' => 'stats#index'
     resources :posts do
       resources :elements
     end
   end
-  get '/resume' => '/blog/resume'
 end
