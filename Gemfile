@@ -15,7 +15,7 @@ group :development, :test do
   gem 'pry-rails'
 end
 group :production do
-  gem 'pg'
+  # gem 'pg'
 end
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
