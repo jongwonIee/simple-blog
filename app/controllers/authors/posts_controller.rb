@@ -12,16 +12,12 @@ module Authors
     # GET /posts/new
     def new
       @post = current_author.posts.build
-      @q = Post.published.most_recently_published.ransack(params[:q])
-      @posts = @q.result
-      # @posts = Post.published.most_recently_published
+      @posts = Post.published.most_recently_published
     end
 
     # GET /posts/1/edit
     def edit
-      @q = Post.published.most_recently_published.ransack(params[:q])
-      @posts = @q.result
-      # @posts = Post.published.most_recently_published
+      @posts = Post.published.most_recently_published
       @element = @post.elements.build
     end
 

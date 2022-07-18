@@ -11,11 +11,11 @@
           <div class="mb-5"><%= @post.description %></div>
           <% @post.elements.each do |element| %>
             <% if element.image? %>
-              <div class="image-element mb-5">
+              <div class="image-element mb-2">
                 <%= image_tag(element.image) %>
               </div>
             <% else %>
-              <div class="content-element mb-5">
+              <div class="content-element mb-2">
                 <%= element.content %>
               </div>
             <% end %>
