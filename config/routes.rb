@@ -12,4 +12,5 @@ Rails.application.routes.draw do
       resources :elements
     end
   end
+  get '/resume' => '/blog/resume'
 end
