@@ -1,15 +1,10 @@
 <div class="container">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="/">Jongwon.net</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <a style="color:black" class="nav-link nav-item active" href="/resume">Resume</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="/resume.pdf">Resume</a>
-        </li>
-        <% if current_author.present? && current_author.id == 1 %>
+        <% if current_author.present? && current_author.id == 1 && device != "mobile" %>
           <li class="nav-item active">
             <a class="nav-link" href="/posts">Posts</a>
           </li>
@@ -19,9 +14,11 @@
         <% end %>
       </ul>
 
-      <%= search_form_for @q, html: {class: 'form-inline my-2 my-lg-0 ' }, url: blog_path(@post) do |f| %>
-        <%= f.search_field :title_or_description_or_hashtag_cont, class:'form-control mr-sm-2' %>
-        <%= f.submit class: 'btn btn-outline-success my-2 my-sm-0' %>
+      <% if device != "mobile" %>
+        <%= search_form_for @q, html: {class: 'form-inline my-2 my-lg-0 ' }, url: blog_path(@post) do |f| %>
+          <%= f.search_field :title_or_description_or_hashtag_cont, class:'form-control mr-sm-2' %>
+          <%= f.submit class: 'btn btn-outline-success my-2 my-sm-0' %>
+        <% end %>
       <% end %>
     </div>
   </nav>
