@@ -11,11 +11,18 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNCL7CWNMZ"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-        gtag('config', 'G-MNCL7CWNMZ');
+      document.addEventListener("turbolinks:load", function(event) {
+        gtag('config', 'G-MNCL7CWNMZ',{
+          page_location: event.data.url,
+          page_path: event.srcElement.location.pathname,
+          page_title: event.srcElement.title
+        });
+      })
+
     </script>
 
     <%= csrf_meta_tags %>
